@@ -1,9 +1,11 @@
-import React from 'react';
-
+import React from "react";
+import { useDispatch } from "react-redux";
+import { openModel } from "../../store/modelSlice";
 const Content = () => {
+  const dispatch = useDispatch();
   return (
     <div>
-      <div className='article'>
+      <div className="article">
         <h2>What is Lorem Ipsum? </h2>
         <p>
           Lorem Ipsum is simply dummy text of the printing and typesetting
@@ -11,7 +13,12 @@ const Content = () => {
           since the 1500s, when an unknown printer took a galley not only five
           centuries, but also the leap into electronic typesetting....
         </p>
-        <button className='btn'>Read full article</button>
+        <button
+          className="btn"
+          onClick={() => dispatch(openModel({ name: "LoginRegister" }))}
+        >
+          Read full article
+        </button>
       </div>
     </div>
   );
